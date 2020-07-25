@@ -19,10 +19,16 @@
 
 package main
 
-import "github.com/caddyserver/caddy/caddy/caddymain"
-
-var run = caddymain.Run // replaced for tests
+import (
+	"github.com/caddyserver/caddy/caddy/caddymain"
+	"github.com/caippx/caddy-filter"
+	"github.com/caippx/caddy-cache"
+	// plug in plugins here, for example:
+	// _ "import/path/here"
+)
 
 func main() {
-	run()
+	// optional: disable telemetry
+	// caddymain.EnableTelemetry = false
+	caddymain.Run()
 }
